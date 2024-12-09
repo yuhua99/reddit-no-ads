@@ -1,0 +1,24 @@
+{
+	"manifest_version" : 3,
+	"name": "reddit-no-ads",
+	"description": "An ad remover for reddit",
+	"version" : "0.1",
+
+	"content_scripts" : [
+		{
+			"matches": [
+					"*://reddit.com/",
+					"*://reddit.com/*",
+					"*://*.reddit.com/*",
+					"*://*.reddit.com/"
+				],
+			"js":["remover.js"],
+			"run_at": "document_end"
+		}
+	],
+
+	"permissions":[
+		"tabs",
+		"activeTab"
+	]
+}
